@@ -1,13 +1,15 @@
 <template>
-  <div class="event-card">
-    <span>@{{ event.time }} on {{ event.date }}</span>
-    <h4>{{ event.title }}</h4>
-  </div>
+  <router-link to="event/123">
+    <div class="event-card">
+      <span>@{{ event.time }} on {{ event.date }}</span>
+      <h4>{{ event.title }}</h4>
+    </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: "EventCard",
+  name: 'EventCard',
   props: {
     event: {
       type: Object,
