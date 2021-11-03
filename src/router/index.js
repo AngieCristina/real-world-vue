@@ -8,6 +8,8 @@ const routes = [
     path: '/',
     name: 'EventList',
     component: EventList,
+    // eslint-disable-next-line prettier/prettier
+    props: route => ({ page: parseInt(route.query.page) || 1 }),
   },
   {
     path: '/event/:id',
