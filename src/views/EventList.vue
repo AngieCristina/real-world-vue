@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       events: null,
-      totalEvents: 0, // <--- Added this to store totalEvents
+      totalEvents: 0,
     };
   },
   created() {
@@ -46,7 +46,7 @@ export default {
       EventService.getEvents(2, this.page)
         .then((response) => {
           this.events = response.data;
-          this.totalEvents = response.headers['x-total-count']; // <--- Store it
+          this.totalEvents = response.headers['x-total-count'];
         })
         .catch((error) => {
           console.log(error);
@@ -55,9 +55,7 @@ export default {
   },
   computed: {
     hasNextPage() {
-      // First, calculate total pages
       const totalPages = Math.ceil(this.totalEvents / 2);
-      // Then check to see if the current page is less than the total pages.
       return this.page < totalPages;
     },
   },
