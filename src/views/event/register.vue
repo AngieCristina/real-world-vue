@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 <template>
-  <p>Register for the event here</p>
+  <p>Register for the event here please</p>
   <button @click="register">Register me</button>
 </template>
 <script>
